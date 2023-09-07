@@ -1,0 +1,29 @@
+
+//Java program to replaces occurrences of a specified character in a given string with a count of how many times that character appears in the string
+package StringProgram;
+
+public class Occurance {
+
+	public static void main(String[] args) {
+		String str = "opentextt";
+		char charToreplace = 't';
+		
+		//check character presence in the string or not
+		if(str.indexOf(charToreplace)== -1) {
+			System.out.println("Given character not available in input string");
+			System.exit(0);
+		}
+		int count = 1;
+		//Logic to replace the 
+		for(int i=0; i<str.length(); i++) {
+			char ch = str.charAt(i);
+			if(ch == charToreplace) {
+				str = str.replaceFirst(String.valueOf(charToreplace), String.valueOf(count));
+				count++;
+			}
+		}
+		System.out.println(str);
+
+	}
+
+}
